@@ -2,6 +2,6 @@
 Small Python tool to handle hhsearch files (hhm/hhs).
 
 <hr>
-## How to install?
+<b> How to install? </b>
 
 <code>pip install hhsearch-python</code>
