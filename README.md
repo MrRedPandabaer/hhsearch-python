@@ -1,6 +1,7 @@
 
 # hhsearch-python
 
+##### Current version: 1.1
 
 This small package was made to handle data output by the software suite HHSearch. It was tested with output of the HHSearch version 1.5. The project's idea and draft itself originates from Dr. Schmidt and was done as a final task for one of his university modules.
 
