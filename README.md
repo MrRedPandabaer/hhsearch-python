@@ -146,13 +146,13 @@ However, `pymol_alignment` also has an option to output an animated picture inst
 ```python
 # as an example we will create a animated gif with the framemultiplier of 4
 pymol_alignment(pdb_1,  
-				pdb_2,  
-				aln_term_1,  
-				aln_term_2,  
-				full_term_1,  
-				full_term_2,   
-				animation = True,   
-				framemultiplier= 4)
+		pdb_2,  
+		aln_term_1,  
+		aln_term_2,  
+		full_term_1,  
+		full_term_2,   
+		animation = True,   
+		framemultiplier= 4)
  ```
  
 Be aware, which each run, the lastrun folder's animation subfolder will always be cleart, so there's not confusion in case one runs one time with the animation feature, and in the next run without it. 
