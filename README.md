@@ -11,4 +11,6 @@ Small Python tool to handle hhsearch files (hhm/hhs).
 <hr>
 
 
-![main_zoom](https://raw.githubusercontent.com/MrRedPandabaer/hhsearch-python/master/main_zoom.png | width=100)
+![main_zoom]( | width=100)
+
+<img src="https://raw.githubusercontent.com/MrRedPandabaer/hhsearch-python/master/main_zoom.png" width="100"/ >
