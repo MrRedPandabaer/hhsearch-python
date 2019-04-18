@@ -15,7 +15,7 @@ You can simply install this package through your pip version.
 ```sh
 pip install hhsearch-python
 ```
-[Find this package on PyPi](https://pypi.org/project/hhsearch-python/)
+[Find this package on PyPi](https://pypi.org/project/hhsearch-python/)!
 
 ------
 ### Requirements
