@@ -216,4 +216,4 @@ plot_frequencies(hit_frequencies, # the pd.DataFrames of the frequencies
 #### Contact Information: 
 | Telegram | Email 
 |-|-|
-[<img src="https://telegram.org/img/t_logo.png" width = 40>](t.me/MrRedPanda)| [<img src="https://www.witopia.com/wp-content/uploads/flat-email-icon.png" width = 40>](mailto:"tim@besonders.net") 
+[<img src="https://telegram.org/img/t_logo.png" width = 40>](https://t.me/MrRedPanda)| [<img src="https://www.witopia.com/wp-content/uploads/flat-email-icon.png" width = 40>](mailto:"tim@besonders.net") 
