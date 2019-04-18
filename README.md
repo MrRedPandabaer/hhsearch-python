@@ -37,7 +37,12 @@ Except PyMol, everything can easily be installed through pip install. PyMol need
 | Windows | https://pymolwiki.org/index.php/Windows_Install | 
 | Linux | https://pymolwiki.org/index.php/Linux_Install |
 
-# Functionalities
+# Wrapper -  Jupyter Notebook
+For this whole module a wrapper with an UI has been created as [Jupyter Notebook]([https://jupyter.org/](https://jupyter.org/)). 
+You just need to open the Jupyter Notebook in this repo with Jupyter, have your `.hhm` and `.hhs` files in subfolders somewhere in the same folder and install the module with `pip install hhsearch-python`. The whole notebook itself is pretty self explanatory and gives you almost all options of the functions in this module as a nice UI. 
+### Recommended if you like automation and simplicity through UI usage.
+
+# Functionalities 
 ## Broad information about Query & Hit
 
 There are a small handful of functions within this package which can be used to generate a decent organized (visualized) output. However, for this all to work properly, you need to have all the needed `.hhm` as well as all `.hhs` files somewhere located in your current working directonary. 
@@ -165,7 +170,7 @@ query_filename = f'data/hhm/{query_dict.get("file_name")}.hhm'
 hit_filename = f'data/hhm/{hit_dict.get("file_name")}.hhm'
 
 query_frequencies = read_in_frequencies(query_filename)
-hit_ frequencies = read_in_frequencies(hit_filename)
+hit_frequencies = read_in_frequencies(hit_filename)
 
 ```
 
@@ -175,13 +180,35 @@ The output DataFrame of the frequencies looks eventually like this:
 |1|M1|0.030019|0.000000|0.004325|0.014670|0.037111|0.012379|(...)
 |(...)|(...)|(...)|(...)|(...)|(...)|(...)|(...)|(...)
 
-However, having the frequencies is one thing, we also want to visualize them. For that, one can use the `plot_frequencies` function. This function takes in seven arguments in total, while only one is an requirement. You need to pass down the created pandas.DataFrame of the frequencies. If desired, the name of the created subfolder `barplots/<name>` can be changed,
+However, having the frequencies is one thing, we also want to visualize them. For that, one can use the `plot_frequencies` function. This function takes in seven arguments in total, while only one is an requirement. You need to pass down the created pandas.DataFrame of the frequencies. If desired, the name of the created subfolder `barplots/<name>` can be changed. I personally recommend to use the filenames out of the `query_dict` and the `hit_dict` with `query_dict.get("file_name")` and `hit_dict.get("file_name")`. The threshold describes the minimal frequency which have to be hit, so it ends up in the plot. Recommended would be something around 0.1, which equals 10%. Next, we need to set the span_start and span_end for our plot. As an example, we will pick the 1st residue as start and 50th as the end of the span. The filename describes the name the file will be stored under in the `/lastrun` folder. Also, if one likes, one can adds a title to the plot, however, I personally dislike this option, since it disturbs the cleaner look. Depending on the span you are chosing, this process can also take some decent time.
 
-Arguments: 
-```plot_frequencies(frequencies,  
-  name: str = "output",  
-  threshold: float = 0.01,  
-  span_start: int = 1,  
-  span_end: int = 50,  
-  filename: str = "barplot.png",  
-  title: bool = False):```
+```python
+plot_frequencies(query_frequencies, # the pd.DataFrames of the frequencies
+                 name = query_dict.get("file_name"),  # desired output name. 
+                 threshold = 0.1,  # 10% threshold
+                 span_start = 1,  # span starting @ 1
+                 span_end = 50,  # span ending @ 50
+                 filename = "query_barplot.png",  
+                 title = False
+                 )
+
+plot_frequencies(hit_frequencies, # the pd.DataFrames of the frequencies
+                 name = hit_dict.get("file_name"),  # desired output name. 
+                 threshold = 0.1,  # 10% threshold
+                 span_start = 1,  # span starting @ 1
+                 span_end = 50,  # span ending @ 50
+                 filename = "hit_barplot.png",  
+                 title = False
+                 )
+  ```
+
+| Query : d1e0ta1, 1-50, min. 10% | Hit : d2vgba1, 1-50, min. 10% | 
+| - | - |
+|<img src="https://raw.githubusercontent.com/MrRedPandabaer/hhsearch-python/master/query_barplot.png" width = "400">| <img src="https://raw.githubusercontent.com/MrRedPandabaer/hhsearch-python/master/hit_barplot.png" width = "400">| 
+
+-----
+
+#### Contact Information: 
+| Telegram | Email 
+|-|-|
+[<img src="https://telegram.org/img/t_logo.png" width = 40>](t.me/MrRedPanda)| [<img src="https://www.witopia.com/wp-content/uploads/flat-email-icon.png" width = 40>](mailto:"tim@besonders.net") 
