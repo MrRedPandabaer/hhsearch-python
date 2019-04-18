@@ -177,9 +177,9 @@ hit_frequencies = read_in_frequencies(hit_filename)
 The output DataFrame of the frequencies looks eventually like this:
 
 | Pos | AS | A |  C | D | E | F | G | (...) |
-|-|-|-|-|-|-|-|-|-|-|-|-|
-|1|M1|0.030019|0.000000|0.004325|0.014670|0.037111|0.012379|(...)
-|(...)|(...)|(...)|(...)|(...)|(...)|(...)|(...)|(...)
+|-|-|-|-|-|-|-|-|-|
+|1|M1|0.030019|0.000000|0.004325|0.014670|0.037111|0.012379|(...) |
+|(...)|(...)|(...)|(...)|(...)|(...)|(...)|(...)|(...) |
 
 However, having the frequencies is one thing, we also want to visualize them. For that, one can use the `plot_frequencies` function. This function takes in seven arguments in total, while only one is an requirement. You need to pass down the created pandas.DataFrame of the frequencies. If desired, the name of the created subfolder `barplots/<name>` can be changed. I personally recommend to use the filenames out of the `query_dict` and the `hit_dict` with `query_dict.get("file_name")` and `hit_dict.get("file_name")`. The threshold describes the minimal frequency which have to be hit, so it ends up in the plot. Recommended would be something around 0.1, which equals 10%. Next, we need to set the span_start and span_end for our plot. As an example, we will pick the 1st residue as start and 50th as the end of the span. The filename describes the name the file will be stored under in the `/lastrun` folder. Also, if one likes, one can adds a title to the plot, however, I personally dislike this option, since it disturbs the cleaner look. Depending on the span you are chosing, this process can also take some decent time.
 
