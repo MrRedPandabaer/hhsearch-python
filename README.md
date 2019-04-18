@@ -5,7 +5,7 @@
 
 This small package was made to handle data output by the software suite HHSearch. It was tested with output of the HHSearch version 1.5. The project's idea and draft itself originates from Dr. Schmidt and was done as a final task for one of his university modules.
 
->HHsearch is a software suite for detecting remote homologues of proteins and generating highquality alignments for homology modeling and function prediction.
+>HHsearch is a software suite for detecting remote homologues of proteins and generating high-quality alignments for homology modeling and function prediction.
 
 [HH-Suite Github](https://github.com/soedinglab/hh-suite) | [Quick Guide to HHSearch](http://ftp.tuebingen.mpg.de/pub/protevo/HHsearch/HHsearch1.5.01/HHsearch-guide.pdf) | 
 
@@ -28,7 +28,7 @@ Pillow==6.0.0
 pymol==0.1.0
 ```
 
-Except PyMol, everything can easily be installed through pip install. PyMol needs to be installed separate, as well as being installed through `pip` to be used in your regular Python environment. 
+Except for PyMol, everything can easily be installed through pip install. PyMol needs to be installed separately, as well as being installed through `pip` to be used in your regular Python environment. 
 
 ##### ```pip``` installation:
 ```pip install -c schrodinger pymol``` | ```pip install -c schrodinger pymol```
@@ -41,15 +41,15 @@ Except PyMol, everything can easily be installed through pip install. PyMol need
 
 ------
 # Wrapper -  Jupyter Notebook
-For this whole module a wrapper with an UI has been created as [Jupyter Notebook]([https://jupyter.org/](https://jupyter.org/)). 
-You just need to open the Jupyter Notebook in this repo with Jupyter, have your `.hhm` and `.hhs` files in subfolders somewhere in the same folder and install the module with `pip install hhsearch-python`. The whole notebook itself is pretty self explanatory and gives you almost all options of the functions in this module as a nice UI. 
+For this whole module, a wrapper with a UI has been created as [Jupyter Notebook]([https://jupyter.org/](https://jupyter.org/)). 
+You just need to open the Jupyter Notebook in this repo with Jupyter, have your `.hhm` and `.hhs` files in subfolders somewhere in the same folder and install the module with `pip install hhsearch-python`. The whole notebook itself is pretty self-explanatory and gives you almost all the options of the functions in this module as a nice UI. 
 ### Recommended if you like automation and simplicity through UI usage.
 
 ------
 # Functionalities 
 ## Broad information about Query & Hit
 
-There are a small handful of functions within this package which can be used to generate a decent organized (visualized) output. However, for this all to work properly, you need to have all the needed `.hhm` as well as all `.hhs` files somewhere located in your current working directonary. 
+There are a small handful of functions within this package which can be used to generate a decent organized (visualized) output. However, for this all to work properly, you need to have all the needed `.hhm` as well as all `.hhs` files somewhere located in your current working directory. 
 
 ```python
 # lets first import all our functions from the module.
@@ -88,7 +88,7 @@ print(hit_dict)
 ------
 ## Colorized Alignments - HTML formatted
 
-Having selected the second alignment as our target-of-choice, we now desire more information about the alignment itself, so we extract the actual alignment with  `get_full_alignment`. It takes two arguments: the `.hhs` file of the query, as well as the number of the hit within the `.hhs` file, just like `get_alignment_term`. So preferably, one looks at the previous created pandas.DataFrame `hhs_hits_statistics` and choses a hit of interest from that. 
+Having selected the second alignment as our target-of-choice, we now desire more information about the alignment itself, so we extract the actual alignment with  `get_full_alignment`. It takes two arguments: the `.hhs` file of the query, as well as the number of the hit within the `.hhs` file, just like `get_alignment_term`. So preferably, one looks at the previously created pandas.DataFrame `hhs_hits_statistics` and choose a hit of interest from that. 
 
 ```python
 # This also creates a html formatted file in a separate folder - /alignments_highlighted/<query>/<NoX-name>.html
@@ -100,15 +100,15 @@ The HTML formatted output looks like the example below. As you can see, **h**eli
 
 
 
-Also, if you desire this formatting to be applied on the whole `.hhs` file, then you can use the function `highlight_hhs_full(hhs_file)` and use the path of the desired `.hhs` file as argument. It returns the given hhs file as a colorized html formatted string and also stores within a separate folder `/alignments_highlighted/<query-name>_full.html` as well as in the `/lastrun folder under the filename hhs_full_colorized.html`.
+Also, if you desire this formatting to be applied on the whole `.hhs` file, then you can use the function `highlight_hhs_full(hhs_file)` and use the path of the desired `.hhs` file as an argument. It returns the given hhs file as a colorized HTML formatted string and also stores within a separate folder `/alignments_highlighted/<query-name>_full.html` as well as in the `/lastrun folder under the filename hhs_full_colorized.html`.
 
 ```python
-# outputs the whole .hhs file colorized in the above shown pattern. 
+# outputs the whole .hhs file colorized in the above-shown pattern. 
 full_hhs_colorized = highlight_hhs_full(hhs_file)
 ```
 ------
 ## PyMol Alignments - Visualization | Animation
-Having alignments organized and colorized is all useful, but we also want to actually create a more visual representation of the chosen alignment. For that, we can use the previous created dictonaries `query_dict` and `hit_dict` and give their information as arguments to the function `pymol_alignment()`. This function also returns the [rmsd value of atomic positions](https://en.wikipedia.org/wiki/Root-mean-square_deviation_of_atomic_positions) in [ångström](https://en.wikipedia.org/wiki/Angstrom). 
+Having alignments organized and colorized is all useful, but we also want to actually create a more visual representation of the chosen alignment. For that, we can use the previous created dictionaries `query_dict` and `hit_dict` and give their information as arguments to the function `pymol_alignment()`. This function also returns the [rmsd value of atomic positions](https://en.wikipedia.org/wiki/Root-mean-square_deviation_of_atomic_positions) in [ångström](https://en.wikipedia.org/wiki/Angstrom). 
 
 ```python
 # building up the information from the query. 
@@ -134,8 +134,8 @@ print(rmsd)
 # In this example RMSD Value is about 0.803 Å over 85 C-αlpha atoms. 
 ```
 
-This will create two images in different folder, as well as a `no_zoom.pse` file, which can be opened with PyMol, alongside with the necassary `.cif` files of the PDB entries into a separate folder called `/cif/`. 
-About the pictures: One being zoomed-in into the area of `aln_term_1`whih is in our example:  `/1e0t//A/70-167/CA`, showing the area of interest, as well as a non-zoomed in picture of `/1e0t//A//CA` in our example.
+This will create two images in a different folder, as well as a `no_zoom.pse` file, which can be opened with PyMol, alongside with the necessary `.cif` files of the PDB entries into a separate folder called `/cif/`. 
+About the pictures: One being zoomed-in into the area of `aln_term_1`whih is in our example:  `/1e0t//A/70-167/CA`, showing the area of interest, as well as a non-zoomed--in picture of `/1e0t//A//CA` in our example.
 These images are stored into the `/lastrun/` folder, as well as in the folder `/PyMol_img/<pdb_1>/<pdb_1>-<pdb_2>/`.
 
 
@@ -143,20 +143,20 @@ These images are stored into the `/lastrun/` folder, as well as in the folder `/
 | ------ | ------ |
 | <img src="https://raw.githubusercontent.com/MrRedPandabaer/hhsearch-python/master/main_zoom.png" width="500"> | <img src="https://raw.githubusercontent.com/MrRedPandabaer/hhsearch-python/master/no_zoom.png" width="500">
 
-However, `pymol_alignment` also has an option to output an animated picture instead of just static pictures, as well as the option of a framemultiplier, which needs to be an integer up to 4. But this option takes much more time to process, but of course gives a _nicer_ output. Each framemultiplier basically doubles the time necassary to create the 360° view of the model.  The frames are stored into a subdir `/animation` in the `lastrun/` folder, alongside with the animated gif, as well as in the separate folder `PyMol_img/<pdb_1>/<pdb_1>-<pdb_2>/animation/<framemultiplier>`, while the animated gif is stored in the folder upper `/animation`.
+However, `pymol_alignment` also has an option to output an animated picture instead of just static pictures, as well as the option of a frame multiplier, which needs to be an integer up to 4. But this option takes much more time to process, but of course, gives a _nicer_ output. Each frame multiplier basically doubles the time necessary to create the 360° view of the model.  The frames are stored into a subdir `/animation` in the `lastrun/` folder, alongside with the animated gif, as well as in the separate folder `PyMol_img/<pdb_1>/<pdb_1>-<pdb_2>/animation/<framemultiplier>`, while the animated gif is stored in the folder upper `/animation`.
 ```python
-# as an example we will create a animated gif with the framemultiplier of 4
+# as an example we will create an animated gif with the frame multiplier of 4
 pymol_alignment(pdb_1,  
-		pdb_2,  
-		aln_term_1,  
-		aln_term_2,  
-		full_term_1,  
-		full_term_2,   
-		animation = True,   
-		framemultiplier= 4)
+        pdb_2,  
+        aln_term_1,  
+        aln_term_2,  
+        full_term_1,  
+        full_term_2,   
+        animation = True,   
+        framemultiplier= 4)
  ```
  
-Be aware, which each run, the lastrun folder's animation subfolder will always be cleart, so there's not confusion in case one runs one time with the animation feature, and in the next run without it. 
+Be aware, which each run, the lastrun folder's animation subfolder will always be cleared, so there's no confusion in case one runs one time with the animation feature, and in the next run without it. 
 
 >  ```# Example for animation = True, framemultiplier = 4 of our example```
 > <img src="https://raw.githubusercontent.com/MrRedPandabaer/hhsearch-python/master/animation_zoom.gif" width="500">
@@ -185,7 +185,7 @@ The output DataFrame of the frequencies looks eventually like this:
 |1|M1|0.030019|0.000000|0.004325|0.014670|0.037111|0.012379|(...) |
 |(...)|(...)|(...)|(...)|(...)|(...)|(...)|(...)|(...) |
 
-However, having the frequencies is one thing, we also want to visualize them. For that, one can use the `plot_frequencies` function. This function takes in seven arguments in total, while only one is an requirement. You need to pass down the created pandas.DataFrame of the frequencies. If desired, the name of the created subfolder `barplots/<name>` can be changed. I personally recommend to use the filenames out of the `query_dict` and the `hit_dict` with `query_dict.get("file_name")` and `hit_dict.get("file_name")`. The threshold describes the minimal frequency which have to be hit, so it ends up in the plot. Recommended would be something around 0.1, which equals 10%. Next, we need to set the span_start and span_end for our plot. As an example, we will pick the 1st residue as start and 50th as the end of the span. The filename describes the name the file will be stored under in the `/lastrun` folder. Also, if one likes, one can adds a title to the plot, however, I personally dislike this option, since it disturbs the cleaner look. Depending on the span you are chosing, this process can also take some decent time.
+However, having the frequencies is one thing, we also want to visualize them. For that, one can use the `plot_frequencies` function. This function takes in seven arguments in total, while only one is a requirement. You need to pass down the created pandas.DataFrame of the frequencies. If desired, the name of the created subfolder `barplots/<name>` can be changed. I personally recommend to use the filenames out of the `query_dict` and the `hit_dict` with `query_dict.get("file_name")` and `hit_dict.get("file_name")`. The threshold describes the minimal frequency which has to be hit, so it ends up in the plot. Recommended would be something around 0.1, which equals 10%. Next, we need to set the span_start and span_end for our plot. As an example, we will pick the 1st residue as start and 50th as the end of the span. The filename describes the name the file will be stored under in the `/lastrun` folder. Also, if one likes, one can add a title to the plot, however, I personally dislike this option, since it disturbs the cleaner look. Depending on the span you are choosing, this process can also take some decent time.
 
 ```python
 plot_frequencies(query_frequencies, # the pd.DataFrames of the frequencies
