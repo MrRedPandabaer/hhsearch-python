@@ -84,7 +84,32 @@ Having selected the second alignment as our target-of-choice, we now desire more
 alignment_of_interest = get_full_alignment(hhs_file, 2)
 ```
 The HTML formatted output looks like the example below. As you can see, **h**elices and sh**e**ets are colorized. 
->![Example Alignment](https://raw.githubusercontent.com/MrRedPandabaer/hhsearch-python/master/example_alignment.jpg)
+<pre>Query d1e0ta1 b.58.1.1 (A:70-167) Pyruvate kinase (PK) {Escherichia coli [TaxId: 562]}</pre>
+<pre>No 2  </pre>
+<pre>>d2vgba1 b.58.1.1 (A:160-261) Pyruvate kinase (PK) {Human (Homo sapiens) [TaxId: 9606]}</pre>
+<pre>Probab=100.00  E-value=6.6e-38  Score=196.55  Aligned_cols=98  Identities=41%  Similarity=0.655  Sum_probs=0.0</pre>
+<pre></pre>
+<pre>Q ss_pred             Cc<font color=blue>EEeEe</font>CCCC--CC<font color=blue>eee</font>CCCC<font color=blue>EEEEE</font>cCCc--cCCCCc<font color=blue>eEee</font>cCcc<font color=red>hHh</font>cCCCCC<font color=blue>EEEE</font>cCCC<font color=blue>EEEEEEEe</font>cCC<font color=blue>EEEEE</font></pre>
+<pre>Q d1e0ta1           1 PEIRTMKLEGG--NDVSLKAGQTFTFTTDKS--VIGNSEMVAVTYEGFTTDLSVGNTVLVDDGLIGMEVTAIEGNKVICK   76 (98)</pre>
+<pre>Q Consensus         1 PeIR~g~~~~~--~~i~l~~G~~v~l~~~~~--~~~~~~~i~v~~~~l~~~v~~G~~IlidDG~i~l~V~~~~~~~v~~~   76 (98)</pre>
+<pre>                      ||||||.|+++  +++.|++||+|+|+++..  ..+++..++++|++|++++++||+||||||+|+|+|.+++++.+.|+</pre>
+<pre>T Consensus         1 PkIR~G~~~~~~~~~i~L~~G~~~~lt~~~~~~~~g~~~~i~v~y~~l~~~v~~G~~IlidDG~i~l~V~~v~~~~v~~~   80 (102)</pre>
+<pre>T d2vgba1           1 PEIRTGILQGGPESEVELVKGSQVLVTVDPAFRTRGNANTVWVDYPNIVRVVPVGGRIYIDDGLISLVVQKIGPEGLVTQ   80 (102)</pre>
+<pre>T ss_dssp             SCCBBCCBTTBSSCCEEECTTCEEEEECCGGGGSCBCSSEEEBSCTTHHHHSCTTCEEEETTTTEEEEEEEECSSEEEEE</pre>
+<pre>T ss_pred             Cc<font color=blue>EEEEE</font>cCCCCccc<font color=blue>EEE</font>ccCC<font color=blue>EEEEEE</font>CCccccCCCCC<font color=blue>EEEe</font>c<font color=red>hHHhHhh</font>cCCCC<font color=blue>EEEEe</font>CC<font color=blue>EEEEEEEEEE</font>CC<font color=blue>EEEEE</font></pre>
+<pre></pre>
+<pre></pre>
+<pre>Q ss_pred             <font color=blue>EEe</font>C<font color=blue>eEe</font>CCCC<font color=blue>eee</font>CCCCcCCC</pre>
+<pre>Q d1e0ta1          77 VLNNGDLGENKGVNLPGVSIAL   98 (98)</pre>
+<pre>Q Consensus        77 v~~~G~l~s~Kgvn~Pg~~l~l   98 (98)</pre>
+<pre>                      |++||.|+|||||||||+.++|</pre>
+<pre>T Consensus        81 V~ngG~L~s~KGvNlPg~~l~l  102 (102)</pre>
+<pre>T d2vgba1          81 VENGGVLGSRKGVNLPGAQVDL  102 (102)</pre>
+<pre>T ss_dssp             EEECEEECSSCBEECTTSCCCC</pre>
+<pre>T ss_pred             <font color=blue>Eee</font>Cc<font color=blue>EEe</font>CCCC<font color=blue>eE</font>CCCCcCCC</pre>
+<pre></pre>
+<pre></pre>
+
 
 Also, if you desire this formatting to be applied on the whole `.hhs` file, then you can use the function `highlight_hhs_full(hhs_file)` and use the path of the desired `.hhs` file as argument. It returns the given hhs file as a colorized html formatted string and also stores within a separate folder `/alignments_highlighted/<query-name>_full.html` as well as in the `/lastrun folder under the filename hhs_full_colorized.html`.
 
@@ -121,9 +146,8 @@ print(rmsd)
 
 This will create two images in different folder. One being zoomed-in into the area of `aln_term_1`whih is in our example:  `/1e0t//A/70-167/CA`, showing the area of interest, as well as a non-zoomed in picture of `/1e0t//A//CA` in our example.
 These images are stored into the `/lastrun/` folder, as well as in the folder `/PyMol_img/<pdb_1>/<pdb_1>-<pdb_2>/`.
->![main_zoom](https://raw.githubusercontent.com/MrRedPandabaer/hhsearch-python/master/main_zoom.png )
 
-<img src="https://github.com/favicon.ico" width="48">
+<img src="https://raw.githubusercontent.com/MrRedPandabaer/hhsearch-python/master/main_zoom.png" width="300">
 
 
 
