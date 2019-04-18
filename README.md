@@ -143,6 +143,14 @@ These images are stored into the `/lastrun/` folder, as well as in the folder `/
 | ------ | ------ |
 | <img src="https://raw.githubusercontent.com/MrRedPandabaer/hhsearch-python/master/main_zoom.png" width="500"> | <img src="https://raw.githubusercontent.com/MrRedPandabaer/hhsearch-python/master/no_zoom.png" width="500">
 
+```
+aln_term_1 is represented as cartoon, red.
+aln_term_2 is represented as cartoon, blue.
+
+full_term_1 is represented as ribbon, yellow.
+full_term_2 is represented as ribbon, green.
+```
+
 However, `pymol_alignment` also has an option to output an animated picture instead of just static pictures, as well as the option of a frame multiplier, which needs to be an integer up to 4. But this option takes much more time to process, but of course, gives a _nicer_ output. Each frame multiplier basically doubles the time necessary to create the 360° view of the model.  The frames are stored into a subdir `/animation` in the `lastrun/` folder, alongside with the animated gif, as well as in the separate folder `PyMol_img/<pdb_1>/<pdb_1>-<pdb_2>/animation/<framemultiplier>`, while the animated gif is stored in the folder upper `/animation`.
 ```python
 # as an example we will create an animated gif with the frame multiplier of 4
