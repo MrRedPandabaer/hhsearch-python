@@ -7,5 +7,5 @@ Small Python tool to handle hhsearch files (hhm/hhs).
 <code>pip install hhsearch-python</code>
 
 <hr>
-# What does this module offer you? 
+## What does this module offer you? 
 <hr>
