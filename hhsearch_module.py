@@ -146,7 +146,7 @@ def extract_HHSearch_main(hhs_file: str = "data/hhs/d1e0ta1.hhs") -> dict:
 
     As an example:
 
-    {'Query': 'Query         d1e0ta1 b.58.1.1 (A:70-167) Pyruvate kinase (PK) {Escherichia coli [TaxId: 562]}',
+    {'Query': 'Query d1e0ta1 b.58.1.1 (A:70-167) Pyruvate kinase (PK) {Escherichia coli [TaxId: 562]}',
      'pdb_id': '1e0t',
      'alignment_term': '/1e0t//A/70-167/CA',
      'full_term': '/1e0t//A//CA',
@@ -463,16 +463,17 @@ def pymol_alignment(pdb_1,
                     full_term_1,
                     full_term_2,
                     animation: bool = False,
-                    framemultiplier : int = 1) -> float:
+                    framemultiplier : int = 1) -> list:
     """
     This function creates an alignment of two proteins, defined by the aln_term_x and full_term_x.
     The alignments are stored in a separate folder PyMol_img/<pdb_1>/<pdb_1>-<pdb_2>, as well as creating a .pse file
     in a separate pse folder pse/<pdb_1>. The last runned images are also stored into the folder lastrun.
 
-    In case the user demands an animated image, the frames are stored into a subdir "zoom", while the animated gif is
+    In case the user demands an animated image, the frames are stored into a subdir "animation", while the animated gif is
     saved in the PyMol_img/<pdb_1>/<pdb_1>-<pdb_2>/ dir, as well as in the lastrun folder.
 
-    The function itself returns the Root-mean-square deviation of atomic positions (RMSD) value as float in Angström.
+    The function itself returns information about the
+    Root-mean-square deviation of atomic positions (RMSD) values as a list.
 
     aln_term_1 is represented as cartoon, red.
     aln_term_2 is represented as cartoon, blue.
@@ -735,7 +736,7 @@ def read_in_frequencies(hhmfile: str = "data/hhm/d1a2oa1.hhm") -> pd.DataFrame:
 
 def plot_frequencies(dataread,
                      name: str = "output",
-                     threshold: float = 0.01,
+                     threshold: float = 0.1,
                      span_start: int = 1,
                      span_end: int = 50,
                      filename: str = "barplot.png",
@@ -744,7 +745,8 @@ def plot_frequencies(dataread,
     This function creates a barplot based on frequencies of a previous created pandas DataFrame based on an .hmm file.
     The DataFrame can be created using the read_in_frequencies() function of this module.
 
-    The created barplot is stored into a
+    The created barplot is stored into a separate folder barplots/<name>-<span_start>-<span_end>-<treshold>.png,
+    as well as in the lastrun folder as the desired "filename" argument.
 
     :param dataread: a pandas DataFrame with only the amino acids' frequencies, taken out of a .hhm file.
                      This DataFrame can be created by using the read_in_frequencies() function of this module.
@@ -800,4 +802,3 @@ def plot_frequencies(dataread,
     plt.close()
 
     return
-
