@@ -175,6 +175,7 @@ hit_frequencies = read_in_frequencies(hit_filename)
 ```
 
 The output DataFrame of the frequencies looks eventually like this:
+
 | Pos | AS | A |  C | D | E | F | G | (...) |
 |-|-|-|-|-|-|-|-|-|-|-|-|
 |1|M1|0.030019|0.000000|0.004325|0.014670|0.037111|0.012379|(...)
