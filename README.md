@@ -1,5 +1,5 @@
 # hhsearch-python
-------------------
+
 
 This small package was made to handle data output by the software suite HHSearch. It was tested with output of the HHSearch version 1.5. The project's idea and draft itself originates from Dr. Schmidt and was done as a final task for one of his university modules.
 
@@ -8,7 +8,7 @@ This small package was made to handle data output by the software suite HHSearch
 [HH-Suite Github](https://github.com/soedinglab/hh-suite) | [Quick Guide to HHSearch](ftp://ftp.tuebingen.mpg.de/pub/protevo/HHsearch/HHsearch1.5.01/HHsearch-guide.pdf)| 
 
 ## Installation
------------------
+
 You can simply install this package through your pip version. 
 ```sh
 pip install hhsearch-python
@@ -37,7 +37,7 @@ Except PyMol, everything can easily be installed through pip install. PyMol need
 | Linux | https://pymolwiki.org/index.php/Linux_Install |
 
 ## Functionalities
------------------
+
 
 There are a small handful of functions within this package which can be used to generate a decent organized (visualized) output. However, for this all to work properly, you need to have all the needed `.hhm` as well as all `.hhs` files somewhere located in your current working directonary. 
 
