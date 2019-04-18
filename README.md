@@ -16,6 +16,7 @@ pip install hhsearch-python
 ```
 [Find this package on PyPi](https://pypi.org/project/hhsearch-python/)
 
+------
 ### Requirements
 For full functionalities you need the following packages as well.
 ```
@@ -37,11 +38,13 @@ Except PyMol, everything can easily be installed through pip install. PyMol need
 | Windows | https://pymolwiki.org/index.php/Windows_Install | 
 | Linux | https://pymolwiki.org/index.php/Linux_Install |
 
+------
 # Wrapper -  Jupyter Notebook
 For this whole module a wrapper with an UI has been created as [Jupyter Notebook]([https://jupyter.org/](https://jupyter.org/)). 
 You just need to open the Jupyter Notebook in this repo with Jupyter, have your `.hhm` and `.hhs` files in subfolders somewhere in the same folder and install the module with `pip install hhsearch-python`. The whole notebook itself is pretty self explanatory and gives you almost all options of the functions in this module as a nice UI. 
 ### Recommended if you like automation and simplicity through UI usage.
 
+------
 # Functionalities 
 ## Broad information about Query & Hit
 
@@ -81,7 +84,7 @@ print(hit_dict)
     'file_name': 'd2vgba1'}
 # except for the key "Query", get_alignment_term() outputs a structure identical dict() as extract_HHSearch_main()
 ```
-
+------
 ## Colorized Alignments - HTML formatted
 
 Having selected the second alignment as our target-of-choice, we now desire more information about the alignment itself, so we extract the actual alignment with  `get_full_alignment`. It takes two arguments: the `.hhs` file of the query, as well as the number of the hit within the `.hhs` file, just like `get_alignment_term`. So preferably, one looks at the previous created pandas.DataFrame `hhs_hits_statistics` and choses a hit of interest from that. 
@@ -102,7 +105,7 @@ Also, if you desire this formatting to be applied on the whole `.hhs` file, then
 # outputs the whole .hhs file colorized in the above shown pattern. 
 full_hhs_colorized = highlight_hhs_full(hhs_file)
 ```
-
+------
 ## PyMol Alignments - Visualization | Animation
 Having alignments organized and colorized is all useful, but we also want to actually create a more visual representation of the chosen alignment. For that, we can use the previous created dictonaries `query_dict` and `hit_dict` and give their information as arguments to the function `pymol_alignment()`. This function also returns the [rmsd value of atomic positions](https://en.wikipedia.org/wiki/Root-mean-square_deviation_of_atomic_positions) in [ångström](https://en.wikipedia.org/wiki/Angstrom). 
 
