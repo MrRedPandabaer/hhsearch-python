@@ -7,7 +7,7 @@ This small package was made to handle data output by the software suite HHSearch
 
 >HHsearch is a software suite for detecting remote homologues of proteins and generating highquality alignments for homology modeling and function prediction.
 
-[HH-Suite Github](https://github.com/soedinglab/hh-suite) | [Quick Guide to HHSearch](ftp://ftp.tuebingen.mpg.de/pub/protevo/HHsearch/HHsearch1.5.01/HHsearch-guide.pdf)| 
+[HH-Suite Github](https://github.com/soedinglab/hh-suite) | [Quick Guide to HHSearch](http://ftp.tuebingen.mpg.de/pub/protevo/HHsearch/HHsearch1.5.01/HHsearch-guide.pdf) | 
 
 ## Installation
 
