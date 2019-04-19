@@ -164,7 +164,7 @@ pymol_alignment(pdb_1,
         framemultiplier= 4)
  ```
  
-Be aware, which each run, the lastrun folder's animation subfolder will always be cleared, so there's no confusion in case one runs one time with the animation feature, and in the next run without it. 
+Be aware, with each run, the lastrun folder's animation subfolder will always be cleared, so there's no confusion in case one runs one time with the animation feature, and in the next run without it. 
 
 >  ```# Example for animation = True, framemultiplier = 4 of our example```
 > <img src="https://raw.githubusercontent.com/MrRedPandabaer/hhsearch-python/master/animation_zoom.gif" width="500">
